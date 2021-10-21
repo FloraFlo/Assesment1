@@ -6,7 +6,7 @@ import AddInput from './Components/AddInput';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Assessment!</Text>
+      <Text>Flora's Assessment!</Text>
       <AddInput/>
       <StatusBar style="auto" />
     </View>
