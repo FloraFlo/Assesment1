@@ -10,7 +10,7 @@ export default function App() {
     <ComponentContainer>
       <View>
         <StatusBar barStyle="light-content"
-          backgroundColor="mindnightblue" />
+          backgroundColor="rgba(249,242,234,255)"/>
       </View>
 
       <View>
@@ -27,7 +27,7 @@ export default function App() {
 }
 
 const ComponentContainer = styled.View`
-  background-color: midnightblue;
+  background-color: rgba(249,242,234,255);
   height: 100%;
   flex-direction: column;
   align-items: center;
