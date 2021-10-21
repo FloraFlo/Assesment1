@@ -1,15 +1,23 @@
 import React from "react";
 import { View } from 'react-native';
 import styled from "styled-components";
+import { MaterialIcons } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
 
-export default function TodoList({ item }) {
+export default function TodoList({ item, deleteItem }) {
     return (
         <ComponentContainer>
             <ListContainer>
-                <View>
-                    <TextItem>{ item.value }</TextItem>
-                    <TextTask> Task </TextTask>
-                </View>
+                   <CirlceContainer>
+                       <Entypo name= "circle" size={20} color="rgba(249,242,234,255)" />
+                   </CirlceContainer>
+                    <View>
+                       <TextItem>{ item.value }</TextItem>
+                       <TextDate> Task </TextDate>
+                    </View>
+                <IconContainer onPress={() => deleteItem(item.key)}>
+                    <MaterialIcons name='delete' size={24} color="rgba(249,242,234,255)" />
+                </IconContainer>
             </ListContainer>
         </ComponentContainer>
     );

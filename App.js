@@ -8,9 +8,10 @@ import TodoList from "./Components/TodoList";
   Font.loadAsync({
     "poppins-regular": require("./assets/fonts/Poppins/Poppins-Regular.ttf"),
     "poppins-bold": require("./assets/fonts/Poppins/Poppins-Bold.ttf"),
-  }); */
+  });  */
 
 export default function App() {
+  // const [fontsLoaded, setFontsLoaded] = useState(false);
 
   const [data, setData] = useState([]);
 
@@ -26,6 +27,12 @@ export default function App() {
     });
   }; 
 
+  const deleteItem = (key) => {
+    setData((prevTodo) => {
+      return prevTodo.filter((todo) => todo.key != key);
+    });
+  }; 
+
   return (
     <ComponentContainer>
       <View>
@@ -38,7 +45,7 @@ export default function App() {
         data = {data}
         keyExtractor={(item) => item.key}
         renderItem = {({ item }) => (
-          <TodoList item={item}/>
+          <TodoList item={item} deleteItem={deleteItem}/>
         )}
         />
 
