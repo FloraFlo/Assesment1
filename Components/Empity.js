@@ -5,9 +5,9 @@ export default function Empty() {
     return (
         <ComponentContainer>
             <EmptyImage
-                source = {require("add an image here")}
+                source={require("../assets/flowers.png")}
             />
-            <EmptyText> Add Todo</EmptyText>
+            <EmptyText> It's time to add some Todos girl! </EmptyText>
         </ComponentContainer>
     );
 }
@@ -19,13 +19,13 @@ const ComponentContainer = styled.View`
 `;
 
 const EmptyImage = styled.Image`
-  width: 350px;
+  width: 100px;
   height: 200px;
 `;
 
 const EmptyText = styled.Text`
-  color: white;
-  font-family: poppins-bold;
+  color: brown;
   margin-top: 30px;
-  font-size: 30px;
+  font-size: 25px;
+  font-family: "PingFangTC-Light"; 
 `;

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {View, TextInput, Text, TouchableOpacity} from 'react-native'
 import styled from "styled-components";
+import { AntDesign } from "@expo/vector-icons"; 
 
 export default function AddInput({ submitHandler }) {
     const [value, setValue] = useState("");
@@ -12,13 +13,14 @@ export default function AddInput({ submitHandler }) {
 return (
     <ComponentContainer>
         <InputContainer>
-            <Input placeholder="Add Task..." onChangeText = {onChangeText} />
+            <Input placeholder="add task..." onChangeText = {onChangeText} />
         </InputContainer>
         <SubmitButton
             onPress = {() =>{
                 setValue(submitHandler(value)); 
             }}
         >
+          <AntDesign name="plus" size={20} color="white"/>
         </SubmitButton>
     </ComponentContainer>
 );
@@ -34,13 +36,13 @@ const InputContainer = styled.View`
 `;
 
 const Input = styled.TextInput`
-  font-family: poppins-regular;
-  font-size: 20px;
+  font-family: "PingFangTC-Light"; 
+  font-size: 25px;
   background-color: white;
   width: 300px;
   margin-right: 20px;
   padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   border-radius: 10px;
 `;
 
@@ -49,6 +51,6 @@ const SubmitButton = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   background-color: rgba(112,66,14,255);
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   border-radius: 50px;
 `;

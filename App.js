@@ -3,15 +3,10 @@ import { View, StatusBar, FlatList } from 'react-native';
 import styled from 'styled-components';
 import AddInput from './Components/AddInput';
 import TodoList from "./Components/TodoList"; 
-
-/* const getFonts = () =>
-  Font.loadAsync({
-    "poppins-regular": require("./assets/fonts/Poppins/Poppins-Regular.ttf"),
-    "poppins-bold": require("./assets/fonts/Poppins/Poppins-Bold.ttf"),
-  });  */
+import Empty from "./Components/Empity";
+import Header from './Components/Header';
 
 export default function App() {
-  // const [fontsLoaded, setFontsLoaded] = useState(false);
 
   const [data, setData] = useState([]);
 
@@ -43,6 +38,8 @@ export default function App() {
       <View>
       <FlatList
         data = {data}
+        ListHeaderComponent = {() => <Header/>}
+        ListEmptyComponent = {() => <Empty/>}
         keyExtractor={(item) => item.key}
         renderItem = {({ item }) => (
           <TodoList item={item} deleteItem={deleteItem}/>
