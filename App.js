@@ -1,23 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { View, StatusBar, FlatList } from 'react-native';
+import styled from 'styled-components';
+
 import AddInput from './Components/AddInput';
 
 export default function App() {
+  const [data, setData] = useState([]);
   return (
-    <View style={styles.container}>
-      <Text>Flora's Assessment!</Text>
-      <AddInput/>
-      <StatusBar style="auto" />
-    </View>
+    <ComponentContainer>
+      <View>
+        <StatusBar barStyle="light-content"
+          backgroundColor="mindnightblue" />
+      </View>
+
+      <View>
+        <FlatList
+          data={data}
+          renderItem={({ item }) => (
+            console.log(item)
+          )}
+        />
+
+      </View>
+    </ComponentContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const ComponentContainer = styled.View`
+  background-color: midnightblue;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`; 
