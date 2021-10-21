@@ -2,10 +2,30 @@ import React, { useState } from 'react';
 import { View, StatusBar, FlatList } from 'react-native';
 import styled from 'styled-components';
 
+const getFonts = () =>
+  Font.loadAsync({
+    "poppins-regular": require("./assets/fonts/Poppins/Poppins-Regular.ttf"),
+    "poppins-bold": require("./assets/fonts/Poppins/Poppins-Bold.ttf"),
+  });
+
 import AddInput from './Components/AddInput';
 
 export default function App() {
+
   const [data, setData] = useState([]);
+
+  const submitHandler = (value) => {
+    setData ((prevTodo) => {
+      return [
+        {
+          value: value,
+          key: Math.random().toString(),
+        },
+        ...prevTodo,
+      ];
+    });
+  }; 
+
   return (
     <ComponentContainer>
       <View>
