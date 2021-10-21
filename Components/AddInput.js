@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {View, TextInput, Text, TouchableOpacity} from 'react-native'
 import styled from "styled-components";
 
-export default function AddInput() {
+export default function AddInput({ submitHandler }) {
     const [value, setValue] = useState("");
 
     const onChangeText = (text) => {
@@ -16,10 +16,9 @@ return (
         </InputContainer>
         <SubmitButton
             onPress = {() =>{
-                alert('button clicked')
+                setValue(submitHandler(value)); 
             }}
         >
-            <Text> Submit </Text>
         </SubmitButton>
     </ComponentContainer>
 );
@@ -49,7 +48,7 @@ const SubmitButton = styled.TouchableOpacity`
   width: 50px;
   justify-content: center;
   align-items: center;
-  background-color: whitesmoke;
+  background-color: rgba(112,66,14,255);
   margin-bottom: 20px;
   border-radius: 50px;
 `;

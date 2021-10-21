@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { View, StatusBar, FlatList } from 'react-native';
 import styled from 'styled-components';
+import AddInput from './Components/AddInput';
+import TodoList from "./Components/TodoList"; 
 
-const getFonts = () =>
+/* const getFonts = () =>
   Font.loadAsync({
     "poppins-regular": require("./assets/fonts/Poppins/Poppins-Regular.ttf"),
     "poppins-bold": require("./assets/fonts/Poppins/Poppins-Bold.ttf"),
-  });
-
-import AddInput from './Components/AddInput';
+  }); */
 
 export default function App() {
 
@@ -34,13 +34,17 @@ export default function App() {
       </View>
 
       <View>
-        <FlatList
-          data={data}
-          renderItem={({ item }) => (
-            console.log(item)
-          )}
+      <FlatList
+        data = {data}
+        keyExtractor={(item) => item.key}
+        renderItem = {({ item }) => (
+          <TodoList item={item}/>
+        )}
         />
 
+        <View>
+          <AddInput submitHandler={submitHandler} />
+        </View>
       </View>
     </ComponentContainer>
   );
