@@ -12,7 +12,7 @@ export default function TodoList({ item, deleteItem }) {
                        <Entypo name= "circle" size={20} color="rgba(249,242,234,255)" />
                    </CirlceContainer>
                     <View>
-                       <TextItem>{ item.value }</TextItem>
+                       <TextItem> { item.value }</TextItem>
                     </View>
                 <IconContainer onPress={() => deleteItem(item.key)}>
                     <MaterialIcons name='delete' size={24} color="brown" />

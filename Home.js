@@ -1,32 +1,12 @@
 import React, { useState } from 'react';
 import { View, StatusBar, FlatList, Keyboard } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native'; 
-import { createStackNavigator } from '@react-navigation/stack';
-import { HomePage } from './Home';
-import { SplashScreen } from './Splash'; 
-
-const Stack = createStackNavigator(); 
-
-export default function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Splash">
-        <Stack.Screen name="Splash" component={SplashScreen}/>
-        <Stack.Screen name="Home" component={HomePage} options={{headerLeft:null}}/>
-      </Stack.Navigator>
-    </NavigationContainer>
-  ); 
-}
-
-/* import React, { useState } from 'react';
-import { View, StatusBar, FlatList, Keyboard } from 'react-native';
 import styled from 'styled-components';
 import AddInput from './Components/AddInput';
 import TodoList from "./Components/TodoList"; 
 import Empty from "./Components/Empity";
 import Header from './Components/Header';
 
-export default function App() {
+export function HomePage() {
 
   const [data, setData] = useState([]);
 
@@ -81,4 +61,3 @@ const ComponentContainer = styled.View`
   align-items: center;
   justify-content: center;
 `; 
- */
