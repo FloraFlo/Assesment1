@@ -1,15 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 import { View } from 'react-native';
 import styled from "styled-components";
 import { MaterialIcons } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 
 export default function TodoList({ item, deleteItem }) {
+  const [disabled, setDisabled] = useState(false)
     return (
         <ComponentContainer>
-            <ListContainer>
+            <ListContainer onPress={() => setDisabled(!disabled)}>
                    <CirlceContainer>
-                       <Entypo name= "circle" size={20} color="rgba(249,242,234,255)" />
+                       <Entypo name= "circle" size={20} color={disabled ? "rgba(110,66,10,1)" : "rgba(249,242,234,255)" } />
                    </CirlceContainer>
                     <View>
                        <TextItem> { item.value }</TextItem>
