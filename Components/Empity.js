@@ -15,17 +15,17 @@ export default function Empty() {
 const ComponentContainer = styled.View`
   align-items: center;
   justify-content: center;
-  height: 650px;
+  height: 575px;
 `;
 
 const EmptyImage = styled.Image`
-  width: 100px;
-  height: 200px;
+  width: 200px;
+  height: 300px;
 `;
 
 const EmptyText = styled.Text`
   color: brown;
   margin-top: 30px;
   font-size: 25px;
-  font-family: "PingFangTC-Light"; 
+  ${'' /* font-family: "PingFangTC-Light";  */}
 `;

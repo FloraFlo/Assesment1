@@ -20,16 +20,16 @@ const ComponentContainer = styled.View`
 `;
 
 const HeaderText = styled.Text`
-  margin-top: 60px;
+  margin-top: 25px;
   color: brown;
   font-size: 30px;
-  font-family: "PingFangSC-Medium";
+  ${'' /* font-family: "PingFangSC-Medium"; */}
 `;
 
 const HeaderList = styled.Text`
-  margin-top: 74px;
+  margin-top: 39px;
   color: brown;
   font-size: 20px;
-  margin-right: 20px;
-  font-family: "PingFangTC-Light"; 
+  margin-right: 5px;
+  ${'' /* font-family: "PingFangTC-Light";  */}
 `;

@@ -35,8 +35,8 @@ const InputContainer = styled.View`
 `;
 
 const Input = styled.TextInput`
-  font-family: "PingFangTC-Light"; 
-  font-size: 25px;
+  ${'' /* font-family: "PingFangTC-Light";  */}
+  font-size: 20px;
   background-color: white;
   width: 300px;
   margin-right: 20px;

@@ -55,7 +55,7 @@ export function HomePage() {
   const getData = async () => {
     try {
       const stringified = await AsyncStorage.getItem("listData");
-      setItemArray(stringified !== null ? JSON.parse(stringified) : []);
+      setData(stringified !== null ? JSON.parse(stringified) : []);
     } catch (error) {
       console.log(error);
     }

@@ -47,7 +47,7 @@ const TextItem = styled.Text`
   font-size: 20px;
   margin-top: 15px;
   margin-right: 20px;
-  font-family: "PingFangTC-Light"; 
+  ${'' /* font-family: "PingFangTC-Light";  */}
 `;
 
 const TextDate = styled.Text`
